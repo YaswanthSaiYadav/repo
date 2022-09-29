@@ -1,0 +1,87 @@
+#Sam Transportation System(Pakka execute)java 7
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+class transportation_system 
+{
+    private int cost ;
+    transportation_system(int cost)
+    {
+        this.cost=cost;
+    }
+    public int getCost()
+    {
+    return this.cost ;
+    }
+    public double calEnvironmentalHazard()
+    {
+        return 0;
+    }
+}
+class metro extends transportation_system 
+{
+    private int length;
+    private int trains;
+    private int runs;
+    private double emissionRate;
+    metro(int cost,int length,int trains,int runs,double emissionRate)
+    {
+        super (cost);
+        this.length=length;
+        this.trains=trains;
+        this.runs=runs;
+        this.emissionRate=emissionRate;
+    }
+    public double calEnvironmentalHazard()
+    {
+        return this.length*this.trains*this.runs*this.emissionRate;    
+    }
+}
+class bus extends transportation_system
+{
+    private int buses ;
+    private int workingHours;
+    private double emissionRate;
+    bus(int cost,int buses ,int workingHours,double emissionRate)
+    {
+        super (cost);
+        this.buses=buses;
+        this.workingHours=workingHours;
+        this.emissionRate=emissionRate;
+    }
+    
+    public double calEnvironmentalHazard()
+    {
+        return this.buses*this.workingHours*this.emissionRate;
+    }
+}   
+class cab extends transportation_system
+    {   
+        private double averageTrips ;
+        private int cabs;
+        private double averageTripLength;
+        private double emissionRate;
+         cab (int cost,double averageTrips,int cabs,double averageTripLength,double emissionRate)
+        {
+            super (cost);
+            this.averageTrips=averageTrips;
+            this.cabs=cabs;
+            this.averageTripLength=averageTripLength;
+            this.emissionRate=emissionRate;
+        }
+        public double calEnvironmentalHazard()
+        {
+        return this.averageTrips * this.cabs *this.averageTripLength *this.emissionRate;
+            
+            }
+    }
+public class Source {
+    public static void main (String[] args) {
+            Scanner in = new Scanner(System.in);
+            int a;
+            a=in.nextInt();
+            System.out.println(a); 
+        }
+    }
